@@ -1,0 +1,39 @@
+title: Sakshi Mehta
+tagline: All about myself
+url: https://sakshisanjay.github.io/
+description: All about myself
+author: Sakshi Sanjay Mehta
+
+twitter:
+  username: sakshisanjay191
+  card: summary
+
+social:
+  name: Sakshi Sanjay Mehta
+  links:
+    - https://twitter.com/sakshisanjay191
+    - https://www.facebook.com/sakshi.mehta.522
+    - https://www.linkedin.com/in/sakshi-mehta-50a6a4a9
+    - https://github.com/sakshisanjay
+
+google_site_verification:
+
+paginate: 6
+paginate_path: '/blog/page:num/'
+
+baseurl:
+repository: 'sakshisanjay/sakshisanjay.github.io'
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+highlighter: rouge
+
+permalink: /:title/
+disqus_shortname: sakshisanjay-github-io
+
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
