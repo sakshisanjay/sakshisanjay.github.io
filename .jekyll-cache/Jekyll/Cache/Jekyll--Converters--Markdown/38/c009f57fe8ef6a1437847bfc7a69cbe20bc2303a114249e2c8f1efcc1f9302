@@ -1,4 +1,4 @@
-I"­<h2 id="about-me">About Me</h2>
+I"´<h2 id="about-me">About Me</h2>
 
 <p><br />
 My name is <strong>Sakshi Sanjay Mehta</strong>. I am working as a <strong>Quality Assurance Engineer</strong> at <a href="https://suyati.com/">Suyati Technologies, Kochi</a>.</p>
@@ -23,23 +23,31 @@ My name is <strong>Sakshi Sanjay Mehta</strong>. I am working as a <strong>Quali
   <li>Ensuring that even employee satisfaction is of utmost importance from a customer experience standpoint</li>
 </ul>
 
-<h3 id="deviation-in-my-career">Deviation in my career</h3>
+<h3 id="change-in-my-career">Change in my career</h3>
 
-<p>I got married in 2015 to <a href="https://abhisheksubbu.github.io">Abhishek Sivasubramanian</a> and shifted to Kochi, Kerala. I had to leave my job at JW Marriott due to relocation. In kochi, I worked for Rajagiri Hospital as a Guest Relation Executive.</p>
+<p>I got married in 2015 to <a href="https://abhisheksubbu.github.io">Abhishek Sivasubramanian</a> and shifted to Kochi, Kerala. I had to leave my job at JW Marriott, Bangalore due to relocation. In kochi, I have worked for Rajagiri Hospital as a Guest Relation Executive.</p>
 
-<p>Soon, I got an offer from <a href="https://suyati.com/">Suyati Technologies, Kochi</a> to join their Quality Team to help them improve quality of softwares that we develop for their customers. I was happy to see that my experience in Hotel Industry and a strong knowledge in customer experience was of great help in shining in the new career.</p>
+<p>Soon, I got an offer from <a href="https://suyati.com/">Suyati Technologies, Kochi</a> to join their Quality Team to help them improve quality of softwares that they develop for their customers. I was happy to see that my experience in Hotel Industry and a strong knowledge in customer experience was of great help in shining in the new career.</p>
+
+<p>Now, I have officially shifted from Hospitality Industry to IT Industry. No looking back (even though I miss the hospitality environment).</p>
 
 <h3 id="what-do-i-do-in-my-current-role">What do I do in my current role</h3>
 
 <p>I work with projects as a <strong>Manual Tester</strong> and <strong>Automation Tester</strong> using Selenium [.NET Platform].</p>
 
-<p>Following are the areas where I am strong at:</p>
+<h4 id="strong-areas">Strong Areas</h4>
 
 <ul>
-  <li>Salesforce CRM [Sales Cloud]</li>
-  <li>Wordpress websites &amp; plugins</li>
+  <li>Testing Salesforce CRM [Sales Cloud] implementations</li>
+  <li>Testing Wordpress websites &amp; plugins</li>
   <li>Responsive Testing using physical devices &amp; BrowserStack</li>
   <li>Automation Testing using Selenium + C# + NUnit</li>
+</ul>
+
+<h4 id="domain-experience">Domain Experience</h4>
+
+<ul>
+  <li>Publishing</li>
 </ul>
 
 <p><br /></p>

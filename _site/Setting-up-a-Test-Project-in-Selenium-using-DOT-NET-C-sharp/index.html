@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="/assets/vs.css" />
+    <link
+      rel="shortcut icon"
+      href="/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <script src="https://use.fontawesome.com/186ff9b997.js"></script>
+    <title>Setting up a Test Project in Selenium using .NET C# | Sakshi Mehta</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-162277021-1"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'UA-162277021-1');
+</script>
+ <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Setting up a Test Project in Selenium using .NET C# | Sakshi Mehta</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Setting up a Test Project in Selenium using .NET C#" />
+<meta name="author" content="Sakshi Sanjay Mehta" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this blog, I will share the steps of how to setup a simple project to be automation tested with Selenium in .NET with C# programming language." />
+<meta property="og:description" content="In this blog, I will share the steps of how to setup a simple project to be automation tested with Selenium in .NET with C# programming language." />
+<link rel="canonical" href="https://sakshisanjay.github.io//Setting-up-a-Test-Project-in-Selenium-using-DOT-NET-C-sharp/" />
+<meta property="og:url" content="https://sakshisanjay.github.io//Setting-up-a-Test-Project-in-Selenium-using-DOT-NET-C-sharp/" />
+<meta property="og:site_name" content="Sakshi Mehta" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-03-31T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Setting up a Test Project in Selenium using .NET C#" />
+<meta name="twitter:site" content="@sakshisanjay191" />
+<meta name="twitter:creator" content="@Sakshi Sanjay Mehta" />
+<script type="application/ld+json">
+{"@type":"BlogPosting","author":{"@type":"Person","name":"Sakshi Sanjay Mehta"},"url":"https://sakshisanjay.github.io//Setting-up-a-Test-Project-in-Selenium-using-DOT-NET-C-sharp/","headline":"Setting up a Test Project in Selenium using .NET C#","dateModified":"2020-03-31T00:00:00+05:30","datePublished":"2020-03-31T00:00:00+05:30","description":"In this blog, I will share the steps of how to setup a simple project to be automation tested with Selenium in .NET with C# programming language.","mainEntityOfPage":{"@type":"WebPage","@id":"https://sakshisanjay.github.io//Setting-up-a-Test-Project-in-Selenium-using-DOT-NET-C-sharp/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light border-bottom">
+  <a class="navbar-brand" href="/"
+    ><img
+      src="/sakshisanjay_siteicon.png"
+      alt=""
+      style="width:64px;"
+    />Sakshi Mehta</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav ml-auto">
+      <li>
+        <a class="nav-item nav-link" href="/about">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      <div style="margin-top:20px; margin-bottom:20px;"><div style="margin-bottom:2rem;">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Setting up a Test Project in Selenium using .NET C#
+      </li>
+    </ol>
+  </nav>
+</div>
+<h1>Setting up a Test Project in Selenium using .NET C#</h1>
+<p>
+  Posted by <a href="https://twitter.com/sakshisanjay191">Sakshi Mehta</a> on
+  <span class="date">
+    March 31, 2020
+  </span>
+</p>
+<p>
+  
+  <a href="/categories/#selenium" class="badge badge-secondary"
+    >Selenium</a
+  >
+  
+  <a href="/categories/#automation" class="badge badge-secondary"
+    >Automation</a
+  >
+  
+</p>
+<p>In this blog, I will share the steps of how to setup a simple project to be automation tested with Selenium in .NET with C# programming language. Here, I assume that you are completely new to Selenium and your machine needs to be configured from scratch.</p>
+
+<p>Here, we will focus on doing automation test with Chrome browser using Selenium.</p>
+
+<h3 id="step-1-download-and-install-visual-studio">STEP 1. Download and Install Visual Studio</h3>
+
+<p>Download <a href="https://visualstudio.microsoft.com/">Visual Studio Community Edition</a></p>
+
+<p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/vs.png" alt="VS" /></p>
+
+<p>The installation of Visual Studio Community Edition is pretty straight forward. Just double click the installer and install.</p>
+
+<blockquote>
+  <p>Ensure to select the “ASP.NET and web development” workload in the installation wizard</p>
+</blockquote>
+
+<p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/asp-net-workload.png" alt="ASP NET Workload" /></p>
+
+<h3 id="step-2-chrome-browser">STEP 2. Chrome Browser</h3>
+
+<ol>
+  <li>Download and Install <a href="https://www.google.com/chrome/">Chrome Browser</a> (if not already installed)</li>
+  <li>Update the <a href="https://www.wikihow.com/Update-Google-Chrome">Chrome Browser to latest version</a></li>
+</ol>
+
+<h3 id="step-3-download-and-configure-chrome-driver">STEP 3. Download and Configure Chrome Driver</h3>
+
+<ol>
+  <li>Download the latest <strong>stable release</strong> of <a href="https://chromedriver.chromium.org/downloads">Chrome Driver</a>.</li>
+  <li>Unzip the downloaded zip file</li>
+  <li>Put the chromedriver.exe from the unzip folder to a new folder named “Drivers” (ideally in C or D Drive)</li>
+  <li>Copy the path of the “Drivers” folder</li>
+  <li>Click the Windows button &amp; Open “View Advanced System Settings”</li>
+  <li>Click on “Environment Variables” button</li>
+  <li>Select the “Path” under System Variables and click on Edit</li>
+  <li>Click on New button</li>
+  <li>Paste the copied “Drivers” folder location</li>
+  <li>Click OK</li>
+  <li>Close the Environment Variables window</li>
+</ol>
+
+<p>What we did so far ensures that the driver is registered in the system variables path. This will make sure that the selenium code is able to call the driver.</p>
+
+<p>We can test if the driver is registered properly by following the steps below:</p>
+
+<ul>
+  <li>Open “Command prompt”</li>
+  <li>Type the command “chromedriver” and press enter</li>
+</ul>
+
+<p>You should see a message that states the ChromeDriver is starting. Optionally, press Ctrl+C in command prompt to stop the chrome driver that we started.
+<img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/chromedriver-success.PNG" alt="Chrome Driver Running" /></p>
+
+<h3 id="step-4-install-autoit">STEP 4. Install AutoIT</h3>
+
+<ol>
+  <li>Download the <a href="https://www.autoitscript.com/site/autoit/downloads/">AutoIT software</a>
+<img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/autoit.png" alt="AutoIT" /></li>
+  <li>Double click the downloaded .exe file and install</li>
+</ol>
+
+<h3 id="step-5-preparing-visual-studio-with-automation-tools">STEP 5. Preparing Visual Studio with Automation tools</h3>
+
+<ol>
+  <li>Launch Visual Studio and click on “Continue without code”
+<img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/vs-without-code.png" alt="VS Without Code" /></li>
+  <li>Click on “Manage Extension” option under the “Extensions” Tab in Visual Studio</li>
+  <li>Click on “Online” Tab</li>
+  <li>Search for “NUnit Test Adapter” and download the extension</li>
+  <li>Close the Visual Studio so that the downloaded extension starts installing</li>
+  <li>Click on the “Modify” button when the extension installation automatically starts</li>
+  <li>Once finished, click on “Close” button</li>
+</ol>
+
+<p>Now, we have completed all the steps required to make our environment ready for Automation Testing using Selenium.</p>
+
+<h3 id="creating-a-test-project">Creating a Test Project</h3>
+
+<ol>
+  <li>Open Visual Studio again</li>
+  <li>Click “Create a new project” button and select “Console Application C#”
+3.</li>
+</ol>
+
+
+<hr />
+<span style="color: black;">Share on: </span>
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+  <a class="a2a_button_facebook"></a>
+  <a class="a2a_button_twitter"></a>
+  <a class="a2a_button_email"></a>
+  <a class="a2a_button_linkedin"></a>
+  <a class="a2a_button_telegram"></a>
+  <a class="a2a_button_whatsapp"></a>
+  <a class="a2a_button_reddit"></a>
+  <a class="a2a_button_pinterest"></a>
+  <a class="a2a_button_tumblr"></a>
+  <a class="a2a_button_pocket"></a>
+  <a class="a2a_button_skype"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+
+<hr />
+
+<div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+  (function() {
+    // DON'T EDIT BELOW THIS LINE
+    var d = document,
+      s = d.createElement('script');
+    s.src = 'https://sakshi-mehta.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+
+</div>
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+  <div class="row">
+    <div class="col-12 col-md">
+      <p class="mv0 lh-copy">
+        Made with
+        <svg
+          aria-labelledby="svg-inline--fa-title-DnkMAVvZBF4e"
+          data-prefix="fas"
+          data-icon="heart"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"
+          class="svg-inline--fa fa-heart fa-w-16"
+        >
+          <title id="svg-inline--fa-title-DnkMAVvZBF4e" class="">
+            Markdown and Bootstrap
+          </title>
+          <path
+            fill="currentColor"
+            d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+            class=""
+          ></path>
+        </svg>
+        in
+        <a
+          href="https://www.google.com/maps/place/Kochi, Kerala"
+          target="_blank"
+          class="link color-inherit hover-white"
+          >Kochi</a
+        >.
+      </p>
+      <small class="d-block mb-3 text-muted"
+        >Copyright 2020 © Sakshi Mehta
+        <p>
+          This is a personal blog. Opinions expressed are solely my own and do
+          not express the views of opinions of my employer.
+        </p></small
+      >
+    </div>
+    <div class="col-12 col-md">
+      <h5>Blog</h5>
+      <ul class="list-unstyled text-small">
+        <li>
+          <a class="text-muted" href="/archives"
+            >Blog Archives</a
+          >
+        </li>
+        <li>
+          <a class="text-muted" href="/categories"
+            >Categories</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!--<div class="col-6 col-md">
+      <h5>Activities</h5>
+      <ul class="list-unstyled text-small">
+        <li>
+          <a class="text-muted" href="/speaking"
+            >Speaking Engagements</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li>
+          <a class="text-muted" href="/learn"
+            >Learn & Upskill</a
+          >
+        </li>
+        <li>
+          <a class="text-muted" href="/downloads"
+            >Downloadables</a
+          >
+        </li>
+      </ul>
+    </div>-->
+  </div>
+</footer>
+
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

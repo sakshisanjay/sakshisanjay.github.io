@@ -24,22 +24,28 @@ My specialization in Hotel Industry was in **Guest Relations** and enjoyed worki
 - Ensuring that data driven decisions are made
 - Ensuring that even employee satisfaction is of utmost importance from a customer experience standpoint
 
-### Deviation in my career
+### Change in my career
 
-I got married in 2015 to [Abhishek Sivasubramanian](https://abhisheksubbu.github.io) and shifted to Kochi, Kerala. I had to leave my job at JW Marriott due to relocation. In kochi, I worked for Rajagiri Hospital as a Guest Relation Executive.
+I got married in 2015 to [Abhishek Sivasubramanian](https://abhisheksubbu.github.io) and shifted to Kochi, Kerala. I had to leave my job at JW Marriott, Bangalore due to relocation. In kochi, I have worked for Rajagiri Hospital as a Guest Relation Executive.
 
-Soon, I got an offer from [Suyati Technologies, Kochi](https://suyati.com/) to join their Quality Team to help them improve quality of softwares that we develop for their customers. I was happy to see that my experience in Hotel Industry and a strong knowledge in customer experience was of great help in shining in the new career.
+Soon, I got an offer from [Suyati Technologies, Kochi](https://suyati.com/) to join their Quality Team to help them improve quality of softwares that they develop for their customers. I was happy to see that my experience in Hotel Industry and a strong knowledge in customer experience was of great help in shining in the new career.
+
+Now, I have officially shifted from Hospitality Industry to IT Industry. No looking back (even though I miss the hospitality environment).
 
 ### What do I do in my current role
 
 I work with projects as a **Manual Tester** and **Automation Tester** using Selenium [.NET Platform].
 
-Following are the areas where I am strong at:
+#### Strong Areas
 
-- Salesforce CRM [Sales Cloud]
-- Wordpress websites & plugins
+- Testing Salesforce CRM [Sales Cloud] implementations
+- Testing Wordpress websites & plugins
 - Responsive Testing using physical devices & BrowserStack
 - Automation Testing using Selenium + C# + NUnit
+
+#### Domain Experience
+
+- Publishing
 
 <br/>
 <hr/>
