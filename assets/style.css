@@ -78,3 +78,7 @@ blockquote p {
 img {
   padding: 5px;
 }
+
+.container-app{
+  width:90%
+}

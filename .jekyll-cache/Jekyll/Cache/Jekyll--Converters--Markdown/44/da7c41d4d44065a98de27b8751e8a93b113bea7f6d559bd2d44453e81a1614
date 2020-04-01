@@ -1,0 +1,163 @@
+I"R*<p>In this blog, I will share the steps of how to setup a simple project to be automation tested with Selenium in .NET with C# programming language. Here, I assume that you are completely new to Selenium and your machine needs to be configured from scratch.</p>
+
+<p>Here, we will focus on doing automation test with Chrome browser using Selenium.</p>
+
+<h3 id="step-1-download-and-install-visual-studio">STEP 1. Download and Install Visual Studio</h3>
+
+<p>Download <a href="https://visualstudio.microsoft.com/">Visual Studio Community Edition</a></p>
+
+<p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/vs.png" alt="VS" /></p>
+
+<p>The installation of Visual Studio Community Edition is pretty straight forward. Just double click the installer and install.</p>
+
+<blockquote>
+  <p>Ensure to select the “ASP.NET and web development” workload in the installation wizard</p>
+</blockquote>
+
+<p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/asp-net-workload.png" alt="ASP NET Workload" /></p>
+
+<h3 id="step-2-chrome-browser">STEP 2. Chrome Browser</h3>
+
+<ol>
+  <li>Download and Install <a href="https://www.google.com/chrome/">Chrome Browser</a> (if not already installed)</li>
+  <li>Update the <a href="https://www.wikihow.com/Update-Google-Chrome">Chrome Browser to latest version</a></li>
+</ol>
+
+<h3 id="step-3-download-and-configure-chrome-driver">STEP 3. Download and Configure Chrome Driver</h3>
+
+<ol>
+  <li>Download the latest <strong>stable release</strong> of <a href="https://chromedriver.chromium.org/downloads">Chrome Driver</a>.</li>
+  <li>Unzip the downloaded zip file</li>
+  <li>Put the chromedriver.exe from the unzip folder to a new folder named “Drivers” (ideally in C or D Drive)</li>
+  <li>Copy the path of the “Drivers” folder</li>
+  <li>Click the Windows button &amp; Open “View Advanced System Settings”</li>
+  <li>Click on “Environment Variables” button</li>
+  <li>Select the “Path” under System Variables and click on Edit</li>
+  <li>Click on New button</li>
+  <li>Paste the copied “Drivers” folder location</li>
+  <li>Click OK</li>
+  <li>Close the Environment Variables window</li>
+</ol>
+
+<p>What we did so far ensures that the driver is registered in the system variables path. This will make sure that the selenium code is able to call the driver.</p>
+
+<p>We can test if the driver is registered properly by following the steps below:</p>
+
+<ul>
+  <li>Open “Command prompt”</li>
+  <li>Type the command “chromedriver” and press enter</li>
+</ul>
+
+<p>You should see a message that states the ChromeDriver is starting. Optionally, press Ctrl+C in command prompt to stop the chrome driver that we started.
+<img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/chromedriver-success.PNG" alt="Chrome Driver Running" /></p>
+
+<h3 id="step-4-install-autoit">STEP 4. Install AutoIT</h3>
+
+<ol>
+  <li>
+    <p>Download the <a href="https://www.autoitscript.com/site/autoit/downloads/">AutoIT software</a></p>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/autoit.png" alt="AutoIT" /></p>
+  </li>
+  <li>
+    <p>Double click the downloaded .exe file and install</p>
+  </li>
+</ol>
+
+<h3 id="step-5-preparing-visual-studio-with-automation-tools">STEP 5. Preparing Visual Studio with Automation tools</h3>
+
+<ol>
+  <li>
+    <p>Launch Visual Studio and click on “Continue without code”</p>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/vs-without-code.png" alt="VS Without Code" /></p>
+  </li>
+  <li>Click on “Manage Extension” option under the “Extensions” Tab in Visual Studio</li>
+  <li>Click on “Online” Tab</li>
+  <li>Search for “NUnit” and download the following extensions
+    <ul>
+      <li>NUnit 3 Test Adapter</li>
+      <li>NUnit VS Templates</li>
+    </ul>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/4+Extensions.png" alt="VS Extensions" /></p>
+  </li>
+  <li>Visual Studio will prompt for restarting Visual Studio.</li>
+  <li>Close the Visual Studio so that the downloaded extensions starts installing</li>
+  <li>Click on the “Modify” button when the extension installation automatically starts</li>
+  <li>
+    <p>Once finished, click on “Close” button</p>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/7+Modifications+complete.PNG" alt="Extension Installed" /></p>
+  </li>
+</ol>
+
+<p>Now, we have completed all the steps required to make our environment ready for Automation Testing using Selenium.</p>
+
+<h3 id="creating-the-test-project">Creating the Test Project</h3>
+
+<ol>
+  <li>Open Visual Studio</li>
+  <li>
+    <p>Click “Create a new project” button and select “<strong>NUnit 3 Unit Test Project [C#]</strong>”</p>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/8+Nunit+Project.PNG" alt="Project Selection" /></p>
+  </li>
+  <li>
+    <p>Specify the project name as “Google.Tests” and select the folder path where you want the project to be saved</p>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/9+New+Project+Name+%26+Location.PNG" alt="Project Name" /></p>
+  </li>
+  <li>Rename the default “TestClass.cs” to “GoogleHomepageTests.cs”</li>
+  <li>Right-click on the Project in Visual Studio Solution Explorer and select “Manage nuget packages”</li>
+  <li>In the “Browse” tab, search for “Selenium”</li>
+  <li>Click on “Selenium.WebDriver” package published by “Selenium Committers”</li>
+  <li>Click on “Install” button. This will install selenium dependencies in the Google.Tests project.</li>
+  <li>In the “GoogleHompageTests.cs”, type the following code
+    <div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="nn">NUnit.Framework</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">OpenQA.Selenium</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">OpenQA.Selenium.Chrome</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">Google.Tests</span>
+<span class="p">{</span>
+   <span class="p">[</span><span class="n">TestFixture</span><span class="p">]</span>
+   <span class="k">public</span> <span class="k">class</span> <span class="nc">GoogleHomepageTests</span>
+   <span class="p">{</span>
+      <span class="k">public</span> <span class="n">IWebDriver</span> <span class="n">driver</span><span class="p">;</span>
+
+      <span class="p">[</span><span class="n">SetUp</span><span class="p">]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">Initialize</span><span class="p">()</span>
+      <span class="p">{</span>
+            <span class="n">driver</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">ChromeDriver</span><span class="p">();</span>
+            <span class="n">driver</span><span class="p">.</span><span class="nf">Manage</span><span class="p">().</span><span class="nf">Timeouts</span><span class="p">().</span><span class="n">ImplicitWait</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">TimeSpan</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">10</span><span class="p">);</span>
+            <span class="n">driver</span><span class="p">.</span><span class="nf">Manage</span><span class="p">().</span><span class="n">Cookies</span><span class="p">.</span><span class="nf">DeleteAllCookies</span><span class="p">();</span>
+            <span class="n">driver</span><span class="p">.</span><span class="nf">Manage</span><span class="p">().</span><span class="n">Window</span><span class="p">.</span><span class="nf">Maximize</span><span class="p">();</span>
+      <span class="p">}</span>
+
+      <span class="p">[</span><span class="n">Test</span><span class="p">]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">SearchPageReturnsValidSearchResults_Pass</span><span class="p">()</span>
+      <span class="p">{</span>
+            <span class="kt">string</span> <span class="n">googleHompage</span> <span class="p">=</span> <span class="s">"https://www.google.com"</span><span class="p">;</span>
+            <span class="n">driver</span><span class="p">.</span><span class="n">Url</span> <span class="p">=</span> <span class="n">googleHompage</span><span class="p">;</span>
+            <span class="n">Thread</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="m">5000</span><span class="p">);</span>
+            <span class="n">driver</span><span class="p">.</span><span class="nf">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="nf">XPath</span><span class="p">(</span><span class="s">"//input[@name='q']"</span><span class="p">)).</span><span class="nf">SendKeys</span><span class="p">(</span><span class="s">"Selenium"</span><span class="p">);</span>
+            <span class="n">driver</span><span class="p">.</span><span class="nf">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="nf">XPath</span><span class="p">(</span><span class="s">"//div[@class='FPdoLc tfB0Bf']//input[@name='btnK']"</span><span class="p">)).</span><span class="nf">Click</span><span class="p">();</span>
+            <span class="n">Thread</span><span class="p">.</span><span class="nf">Sleep</span><span class="p">(</span><span class="m">5000</span><span class="p">);</span>
+            <span class="kt">string</span> <span class="n">currentUrl</span> <span class="p">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">Url</span><span class="p">;</span>
+            <span class="n">Assert</span><span class="p">.</span><span class="nf">AreNotSame</span><span class="p">(</span><span class="n">currentUrl</span><span class="p">,</span> <span class="n">googleHompage</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="p">[</span><span class="n">TearDown</span><span class="p">]</span>
+      <span class="k">public</span> <span class="k">void</span> <span class="nf">Dispose</span><span class="p">()</span>
+      <span class="p">{</span>
+            <span class="n">driver</span><span class="p">.</span><span class="nf">Quit</span><span class="p">();</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+:ET

@@ -1,0 +1,102 @@
+I"�<p>In this blog, I will share the steps of how to setup a simple project to be automation tested with Selenium in .NET with C# programming language. Here, I assume that you are completely new to Selenium and your machine needs to be configured from scratch.</p>
+
+<p>Here, we will focus on doing automation test with Chrome browser using Selenium.</p>
+
+<h3 id="step-1-download-and-install-visual-studio">STEP 1. Download and Install Visual Studio</h3>
+
+<p>Download <a href="https://visualstudio.microsoft.com/">Visual Studio Community Edition</a></p>
+
+<p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/vs.png" alt="VS" /></p>
+
+<p>The installation of Visual Studio Community Edition is pretty straight forward. Just double click the installer and install.</p>
+
+<blockquote>
+  <p>Ensure to select the “ASP.NET and web development” workload in the installation wizard</p>
+</blockquote>
+
+<p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/asp-net-workload.png" alt="ASP NET Workload" /></p>
+
+<h3 id="step-2-chrome-browser">STEP 2. Chrome Browser</h3>
+
+<ol>
+  <li>Download and Install <a href="https://www.google.com/chrome/">Chrome Browser</a> (if not already installed)</li>
+  <li>Update the <a href="https://www.wikihow.com/Update-Google-Chrome">Chrome Browser to latest version</a></li>
+</ol>
+
+<h3 id="step-3-download-and-configure-chrome-driver">STEP 3. Download and Configure Chrome Driver</h3>
+
+<ol>
+  <li>Download the latest <strong>stable release</strong> of <a href="https://chromedriver.chromium.org/downloads">Chrome Driver</a>.</li>
+  <li>Unzip the downloaded zip file</li>
+  <li>Put the chromedriver.exe from the unzip folder to a new folder named “Drivers” (ideally in C or D Drive)</li>
+  <li>Copy the path of the “Drivers” folder</li>
+  <li>Click the Windows button &amp; Open “View Advanced System Settings”</li>
+  <li>Click on “Environment Variables” button</li>
+  <li>Select the “Path” under System Variables and click on Edit</li>
+  <li>Click on New button</li>
+  <li>Paste the copied “Drivers” folder location</li>
+  <li>Click OK</li>
+  <li>Close the Environment Variables window</li>
+</ol>
+
+<p>What we did so far ensures that the driver is registered in the system variables path. This will make sure that the selenium code is able to call the driver.</p>
+
+<p>We can test if the driver is registered properly by following the steps below:</p>
+
+<ul>
+  <li>Open “Command prompt”</li>
+  <li>Type the command “chromedriver” and press enter</li>
+</ul>
+
+<p>You should see a message that states the ChromeDriver is starting. Optionally, press Ctrl+C in command prompt to stop the chrome driver that we started.
+<img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/chromedriver-success.PNG" alt="Chrome Driver Running" /></p>
+
+<h3 id="step-4-install-autoit">STEP 4. Install AutoIT</h3>
+
+<ol>
+  <li>Download the <a href="https://www.autoitscript.com/site/autoit/downloads/">AutoIT software</a>
+<img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/autoit.png" alt="AutoIT" /></li>
+  <li>Double click the downloaded .exe file and install</li>
+</ol>
+
+<h3 id="step-5-preparing-visual-studio-with-automation-tools">STEP 5. Preparing Visual Studio with Automation tools</h3>
+
+<ol>
+  <li>
+    <p>Launch Visual Studio and click on “Continue without code”</p>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/vs-without-code.png" alt="VS Without Code" /></p>
+  </li>
+  <li>Click on “Manage Extension” option under the “Extensions” Tab in Visual Studio</li>
+  <li>Click on “Online” Tab</li>
+  <li>Search for “NUnit” and download the following extensions
+    <ul>
+      <li>NUnit 3 Test Adapter</li>
+      <li>NUnit VS Templates</li>
+    </ul>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/4+Extensions.png" alt="VS Extensions" /></p>
+  </li>
+  <li>Visual Studio will prompt for restarting Visual Studio.</li>
+  <li>Close the Visual Studio so that the downloaded extensions starts installing</li>
+  <li>Click on the “Modify” button when the extension installation automatically starts</li>
+  <li>
+    <p>Once finished, click on “Close” button</p>
+
+    <p><img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/7+Modifications+complete.PNG" alt="Extension Installed" /></p>
+  </li>
+</ol>
+
+<p>Now, we have completed all the steps required to make our environment ready for Automation Testing using Selenium.</p>
+
+<h3 id="creating-a-test-project">Creating a Test Project</h3>
+
+<ol>
+  <li>Open Visual Studio</li>
+  <li>Click “Create a new project” button and select “<strong>NUnit 3 Unit Test Project [C#]</strong>”
+<img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/8+Nunit+Project.PNG" alt="Project Selection" /></li>
+  <li>Specify the project name as “Google.Tests” and select the folder path where you want the project to be saved
+<img src="https://sakshimehta.s3-ap-southeast-1.amazonaws.com/images/9+New+Project+Name+%26+Location.PNG" alt="Project Name" /></li>
+</ol>
+
+:ET
